@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="YHM">
+
+
+
+
+<!-- 解决语雀图片防盗链 -->
+<meta name="referrer" content="no-referrer" />
+
+<title>健身计划 | Hexo</title>
+
+
+
+    <link rel="icon" href="/luffy.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Huamin&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Huamin&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">健身计划</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">YHM</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 16, 2023&nbsp;&nbsp;18:50:21</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><p>笔主99年男性，身高170，体重68kg，有6年足球运动基础，已停止系统运动7年。身体状态一般（比普通人好点），工作需要久坐。<br>为了能够长期有效工作，需要日常增加运动量，改进身体状况。目标是减到65并保持，增肌（下半身比上半身壮，需要提高上半身和核心力量）。<br>参考B站up主《凯圣王》的训练讲解视频。<a target="_blank" rel="noopener" href="https://space.bilibili.com/2100737396">https://space.bilibili.com/2100737396</a></p>
+<h1 id="二、新手增肌系列"><a href="#二、新手增肌系列" class="headerlink" title="二、新手增肌系列"></a>二、新手增肌系列</h1><h2 id="2-1-新手增肌系列、开篇"><a href="#2-1-新手增肌系列、开篇" class="headerlink" title="2.1 新手增肌系列、开篇"></a>2.1 新手增肌系列、开篇</h2><table>
+<thead>
+<tr>
+<th>理论&#x3D;理论课</th>
+<th>向心，离心，RPE，RM，肌肉类型，容量。。。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实操&#x3D;体育课</td>
+<td>动作演示，动作实操，第三视角私教课（二、三分化）</td>
+</tr>
+<tr>
+<td>周期&#x3D;物理课</td>
+<td>如何选择适合自己的分化训练？一个周期如何设计？</td>
+</tr>
+<tr>
+<td>饮食&#x3D;数学课</td>
+<td>了解自己的数据、如何设计适合自己的饮食方式？</td>
+</tr>
+</tbody></table>
+<h2 id="2-2-二分化训练A-躯干-体育课（练两天休一天）"><a href="#2-2-二分化训练A-躯干-体育课（练两天休一天）" class="headerlink" title="2.2 二分化训练A 躯干&#x2F;体育课（练两天休一天）"></a>2.2 二分化训练A 躯干&#x2F;体育课（练两天休一天）</h2><p>| </p>
+<ol>
+<li>杠铃卧推<br> | 4组 | 16 | 12 | 12 | 10 |<br>| — | — | — | — | — | — |<br>| </li>
+<li>哑铃坐姿推肩<br> | 3组 | 12 | 12 | 12 |  |<br>| </li>
+<li>高位下拉<br> | 3组 | 12 | 12 | 12 |  |<br>| </li>
+<li>坐姿划船<br> | 3组 | 16 | 12 | 10 |  |<br>| </li>
+<li>澳式引体<br> | 3组 | 10 | 10 | 10 |  |<br>| </li>
+<li>交替触肩<br> | 3组 | 5 | 5 | 5 |  |</li>
+</ol>
+<p>单位是RM，要注意<strong>节奏、呼吸、位移、质量。</strong></p>
+<h1 id="三、第三视角私教课"><a href="#三、第三视角私教课" class="headerlink" title="三、第三视角私教课"></a>三、第三视角私教课</h1><p>悬重举腿正面、左右两侧各8次。2组。<br>悬撑举腿，20次。2组。<br>超级组，2组。</p>
+<h2 id="3-1-腹肌"><a href="#3-1-腹肌" class="headerlink" title="3.1 腹肌"></a>3.1 腹肌</h2><h3 id="悬重举腿"><a href="#悬重举腿" class="headerlink" title="悬重举腿"></a>悬重举腿</h3><p>能够练到肩关节的稳定性，强化肩胛下沉理力量、带下腹<br>正面8次。侧面双向各8次。</p>
+<h4 id="动作要点："><a href="#动作要点：" class="headerlink" title="动作要点："></a>动作要点：</h4><p>腿不要向后，挺腰，脚放在身体前侧，往上荡<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697451437976-ea926715-3a17-4e0e-a940-36b6615de3d5.png#averageHue=%23666b68&clientId=u8a129c6c-2017-4&from=paste&height=205&id=uec9279b2&originHeight=405&originWidth=402&originalType=binary&ratio=1&rotation=0&showTitle=false&size=448977&status=done&style=none&taskId=u6d5e8f5a-b75b-4f11-ae6a-80d6e678795&title=&width=203" alt="image.png"><br>启动时侧面观察， 盆后倾，腹直肌收紧，腿放松不完全伸直，与髋同高<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697451522316-f8d6da8f-3938-4916-af15-ff2e1234307f.png#averageHue=%236c796d&clientId=u8a129c6c-2017-4&from=paste&height=186&id=u89acdbf1&originHeight=380&originWidth=409&originalType=binary&ratio=1&rotation=0&showTitle=false&size=454593&status=done&style=none&taskId=uc9713c8f-68fc-4aeb-932c-22da69d1fdc&title=&width=200" alt="image.png"></p>
+<h4 id="动作示范："><a href="#动作示范：" class="headerlink" title="动作示范："></a>动作示范：</h4><p>固定肩，沉肩，抬时手掌向前推。正面8次。骨盆后倾，起来时呼气，腹下压<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697451666061-36652b46-db73-4599-8b79-3f3fe550b258.png#averageHue=%23686964&clientId=u8a129c6c-2017-4&from=paste&height=468&id=u551e42e1&originHeight=468&originWidth=215&originalType=binary&ratio=1&rotation=0&showTitle=false&size=275657&status=done&style=none&taskId=u84679660-9491-4978-8501-25e176d0686&title=&width=215" alt="image.png"> <img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697451676371-2f621e5a-c385-4ee6-9379-6e3cd56d8b12.png#averageHue=%2391805a&clientId=u8a129c6c-2017-4&from=paste&height=374&id=u427701d1&originHeight=374&originWidth=215&originalType=binary&ratio=1&rotation=0&showTitle=false&size=227880&status=done&style=none&taskId=ua0513e00-9a17-41e3-b7b8-08ca9a9cdde&title=&width=215" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697451722439-347a70a7-c3f0-47f9-a8dc-50bcde1aa324.png#averageHue=%23586d54&clientId=u8a129c6c-2017-4&from=paste&height=302&id=u9cb82272&originHeight=476&originWidth=320&originalType=binary&ratio=1&rotation=0&showTitle=false&size=411888&status=done&style=none&taskId=u87b6d814-e393-4076-a292-48d33d07943&title=&width=203" alt="image.png"><br>侧面8次+8次<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697451772410-a200399d-61a6-4e11-adee-db81938cf139.png#averageHue=%23b3967b&clientId=u8a129c6c-2017-4&from=paste&height=387&id=u049ebafc&originHeight=451&originWidth=252&originalType=binary&ratio=1&rotation=0&showTitle=false&size=292559&status=done&style=none&taskId=u6e219b40-a8ce-4a25-8d7d-55236424cf0&title=&width=216" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697451798954-c6715a8a-e220-41f1-9c44-bd9bc2e7c83a.png#averageHue=%23958e7d&clientId=u8a129c6c-2017-4&from=paste&height=387&id=uee479880&originHeight=474&originWidth=272&originalType=binary&ratio=1&rotation=0&showTitle=false&size=346253&status=done&style=none&taskId=u3415776c-70c0-483a-9772-0e843a19678&title=&width=222" alt="image.png"></p>
+<h3 id="悬撑举腿"><a href="#悬撑举腿" class="headerlink" title="悬撑举腿"></a>悬撑举腿</h3><p>激活前锯肌，20次。</p>
+<h4 id="动作要点：-1"><a href="#动作要点：-1" class="headerlink" title="动作要点："></a>动作要点：</h4><p>沉肩，找膝盖够胸口的感觉，启动时臀部跟着向上升，腹是收缩状态。</p>
+<h4 id="动作示范"><a href="#动作示范" class="headerlink" title="动作示范"></a>动作示范</h4><p>向上时呼气，下时不缩肩，颈椎尽量无动作。<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697452068933-f6c53639-44cc-4a4a-a5e6-a13133a412af.png#averageHue=%238c836b&clientId=u8a129c6c-2017-4&from=paste&height=366&id=u919a35e0&originHeight=479&originWidth=221&originalType=binary&ratio=1&rotation=0&showTitle=false&size=266727&status=done&style=none&taskId=uf2a02e64-5e3c-4a3a-9021-e188346448f&title=&width=169" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697452114200-0ee7ae13-713a-4dbd-bc6c-2b5422235ed5.png#averageHue=%239b9682&clientId=u8a129c6c-2017-4&from=paste&height=325&id=ucf013f66&originHeight=409&originWidth=276&originalType=binary&ratio=1&rotation=0&showTitle=false&size=297833&status=done&style=none&taskId=ub23dc0b5-1665-464f-9392-4fc528db837&title=&width=219" alt="image.png"></p>
+<h3 id="超级组"><a href="#超级组" class="headerlink" title="超级组"></a>超级组</h3><p>2组，前锯肌，卷腹，练核心。</p>
+<h4 id="动作要点：-2"><a href="#动作要点：-2" class="headerlink" title="动作要点："></a>动作要点：</h4><p>小腿抬过膝盖，大腿保持垂直地面，抬头时呼气，腹部向下压。手放在脖子后，整个胸不要成为一体，主要目的是卷腹。<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697452481139-5a2a6822-7db0-432f-8ed7-724ef0d842b7.png#averageHue=%237d8278&clientId=u8a129c6c-2017-4&from=paste&height=200&id=uee2d982a&originHeight=269&originWidth=458&originalType=binary&ratio=1&rotation=0&showTitle=false&size=314901&status=done&style=none&taskId=u9f499b38-b482-485d-8b58-205630b6873&title=&width=340" alt="image.png"><br>后侧要压在垫子上<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697452642891-0a941d3e-58c5-4c47-b83c-25facf57a7ed.png#averageHue=%23bdbcae&clientId=u8a129c6c-2017-4&from=paste&height=222&id=u65e766be&originHeight=451&originWidth=688&originalType=binary&ratio=1&rotation=0&showTitle=false&size=649746&status=done&style=none&taskId=u669d9268-d18f-4ccc-b802-48d0b9a8a3d&title=&width=338" alt="image.png"><br>支撑保持股盆后倾， 向前顶前锯肌，肚子向里收<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697452725778-1324124d-c361-4a31-9e15-9bd8c844587e.png#averageHue=%23ab9134&clientId=u8a129c6c-2017-4&from=paste&height=190&id=uf17fc2db&originHeight=290&originWidth=686&originalType=binary&ratio=1&rotation=0&showTitle=false&size=490884&status=done&style=none&taskId=u862a60e5-f6b0-444d-9e04-0769141d0ce&title=&width=449" alt="image.png"></p>
+<h4 id="动作示范：-1"><a href="#动作示范：-1" class="headerlink" title="动作示范："></a>动作示范：</h4><p>双手抱头向后，上卷腹，呼气腹部下压，背不离地。20次。<br><img src="https://cdn.nlark.com/yuque/0/2023/png/1205446/1697452436224-1b3497f8-2332-4628-95b0-8d514f2f5763.png#averageHue=%239c9a93&clientId=u8a129c6c-2017-4&from=paste&height=198&id=uccc12edd&originHeight=253&originWidth=447&originalType=binary&ratio=1&rotation=0&showTitle=false&size=284215&status=done&style=none&taskId=ucfa1b55a-8135-4ea0-a105-b3025e1513e&title=&width=350" alt="image.png"><br>支撑保持股盆后倾， 向前顶前锯肌，肚子向里收，保持30秒（45s&#x2F;1分钟）。<br>前锯肌，核心非常酸，腿松弛</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>YHM</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2023/10/16/%E5%81%A5%E8%BA%AB%E8%AE%A1%E5%88%92/">http://example.com/2023/10/16/%E5%81%A5%E8%BA%AB%E8%AE%A1%E5%88%92/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>你相信光吗?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2023/10/09/%E5%9B%BE%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F/">图解计算机系统</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© YHM | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
